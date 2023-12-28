@@ -1,0 +1,90 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <style type="text/css">
+        .card-header{
+            background-color: white;
+            color: #blue;
+            text-align: center;
+        }
+    </style>
+</head>
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-xl-4 col-lg-6 wow slideInUp" data-wow-delay="0.1s">
+
+                </div>
+                <div class="col-xl-4 col-lg-6 wow slideInUp" data-wow-delay="0.3s">
+                    {% if msg %}
+                        <b style="color: blue;">{{msg}}</b>
+                    {% endif %}
+                    <form method="post" action="{% url 'signup' %}">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="card-header">
+                                <h3>Sign Up</h3>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your First Name" name="fname" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Last Name" name="lname" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" name="email" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control border-0 bg-light px-4" name="mobile" placeholder="Your Mobile" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control border-0 bg-light px-4" name="address" placeholder="Address"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <input type="password" class="form-control border-0 bg-light px-4" name="password" placeholder="Your Password" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="password" class="form-control border-0 bg-light px-4" name="cpassword" placeholder="Your Confirm Password" style="height: 55px;">
+                            </div>
+                            <div class="col-12">
+                                <input type="file" class="form-control border-0 bg-light px-4" name="profile_picture" placeholder="Your Confirm Password" style="height: 55px;">
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Sign Up</button>
+                            </div>
+ 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid position-relative pt-5 wow fadeInUp" data-wow-delay="0.1s" style="z-index: 1;">
+        <div class="container">
+            <div class="bg-primary p-5">
+                <form class="mx-auto" style="max-width: 600px;">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                        <button class="btn btn-dark px-4">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+    
+
+</body>
+</html>
+{% endblock %}
