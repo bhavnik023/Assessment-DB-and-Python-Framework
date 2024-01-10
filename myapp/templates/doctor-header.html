@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="utf-8">
     <title>DentCare - Dental Clinic Website Template</title>
@@ -84,20 +83,19 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="/" class="nav-item nav-link active">Home</a>
-                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
-                <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                <a href="{% url 'doctor-view-appointment' %}" class="nav-item nav-link">Appointment</a>
+                <a href="{% url 'view-doctor' %}" class="nav-item nav-link">View Doctor</a>
                 <a href="{% url 'change-password' %}" class="nav-item nav-link">Change Password</a>
             </div>
 
             <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
 
-            <div class="login-signup">
-                                
+            <div class="login-signup">                
             {% if request.session.email %}
-                <a href="{% url 'profile' %}" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11" data-toggle="modal" data-target="#profileModal">
-                <img  src="{{request.session.profile_image}}" style="border-radius:50px;" width="50px" height="50px" alt="User Image">
+                 <a href="{% url 'profile' %}" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11" data-toggle="modal" data-target="#profileModal">
+                <img  src="{{request.session.profile_image}}"  width="50px" height="50px" alt="User Image" style="border-radius:50px;" class="profile-image"/>
                 </a>  
+
                 <a href="{% url 'logout' %}">Logout({{request.session.fname}})</a>                              
             {% else %}
                 <a href="{% url 'login' %}" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11" >
@@ -108,7 +106,6 @@
                 <i class="zmdi zmdi-shopping-cart"></i>
                 </div>
             </div>    
-            <a href="{% url 'appointment' %}" class="btn btn-primary py-2 px-4 ms-3">Appointment</a>
         </div>
 
     </nav>

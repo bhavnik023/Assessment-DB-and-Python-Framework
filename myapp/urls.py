@@ -13,4 +13,8 @@ urlpatterns = [
     path('logout/',views.logout,name='logout'),
     path('verify-otp/',views.verify_otp,name='verify-otp'),
     path('new-password/',views.new_password,name='new-password'),
+    path('change-password/',views.change_password,name='change-password'),
+    path('doctor-view-appointment/',views.doctor_view_appointment,name='doctor-view-appointment'),
+    path('view-doctor/',views.view_doctor,name='view-doctor'),
+    path('profile/',views.profile,name='profile'),
 ]
